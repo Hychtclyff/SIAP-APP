@@ -64,155 +64,127 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# SIAP-APP
-SIAP - Sistem Informasi Alamat Penduduk
+
+# SIAP - Sistem Informasi Alamat Penduduk
 
 SIAP adalah sebuah aplikasi berbasis web yang dirancang untuk mengelola informasi alamat penduduk secara efisien. Aplikasi ini mendukung pencatatan, pembaruan, dan pencarian data alamat penduduk, yang bertujuan untuk mendukung administrasi kependudukan yang lebih baik.
 
-Fitur Utama
+## Fitur Utama
 
-Manajemen Data Penduduk
+1. **Manajemen Data Penduduk**
+   - Tambah data penduduk baru.
+   - Edit dan hapus data penduduk.
+2. **Pencarian Alamat**
+   - Fitur pencarian cepat untuk menemukan data penduduk berdasarkan nama, NIK, atau alamat.
+3. **Keamanan**
+   - Autentikasi pengguna untuk memastikan hanya pengguna yang berwenang yang dapat mengakses sistem.
 
-Tambah data penduduk baru.
+## Teknologi yang Digunakan
 
-Edit dan hapus data penduduk.
+- **Framework Back-end**: Laravel 8
+- **Database**: MySQL
+- **Frontend**: Blade Template
+- **Tools Lainnya**: Composer, Node.js, NPM
 
-Pencarian Alamat
+## Instalasi
 
-Fitur pencarian cepat untuk menemukan data penduduk berdasarkan nama, NIK, atau alamat.
+### Prasyarat
 
-Pengelompokan Data
+1. PHP versi 7.4 atau lebih baru.
+2. Composer.
+3. MySQL.
+4. Node.js dan NPM (opsional, untuk frontend assets).
 
-Pengelompokan penduduk berdasarkan wilayah (RT, RW, Kelurahan, Kecamatan).
+### Langkah-langkah Instalasi
 
-Laporan
+1. Clone repositori ini:
+   ```bash
+   git clone https://github.com/nama_user/siap.git
+   cd siap
+   ```
 
-Export data penduduk dalam format CSV atau PDF.
+2. Install dependencies menggunakan Composer:
+   ```bash
+   composer install
+   ```
 
-Keamanan
+3. Salin file `.env.example` menjadi `.env`:
+   ```bash
+   cp .env.example .env
+   ```
 
-Autentikasi pengguna untuk memastikan hanya pengguna yang berwenang yang dapat mengakses sistem.
+4. Atur konfigurasi di file `.env`:
+   ```env
+   APP_NAME=SIAP
+   APP_ENV=local
+   APP_KEY=
+   APP_DEBUG=true
+   APP_URL=http://localhost
 
-Teknologi yang Digunakan
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=nama_database
+   DB_USERNAME=root
+   DB_PASSWORD=password
+   ```
 
-Framework Back-end: Laravel 8
+5. Generate application key:
+   ```bash
+   php artisan key:generate
+   ```
 
-Database: MySQL
+6. Jalankan migrasi database:
+   ```bash
+   php artisan migrate
+   ```
 
-Frontend: Blade Template
+7. Jika diperlukan, jalankan seeder untuk mengisi data awal:
+   ```bash
+   php artisan db:seed
+   ```
 
-Tools Lainnya: Composer, Node.js, NPM
+8. Jalankan server lokal:
+   ```bash
+   php artisan serve
+   ```
 
-Instalasi
+Akses aplikasi di browser melalui `http://127.0.0.1:8000`.
 
-Prasyarat
+## Struktur Direktori Utama
 
-PHP versi 7.4 atau lebih baru.
+- **app/**: Logika aplikasi.
+- **config/**: Konfigurasi aplikasi.
+- **database/**: File migrasi dan seeder.
+- **resources/**: File Blade templates dan asset frontend.
+- **routes/**: File rute aplikasi.
+- **storage/**: Penyimpanan file yang diunggah dan cache.
 
-Composer.
+## Penggunaan
 
-MySQL.
+### Menambahkan Data Penduduk
+1. Login ke aplikasi.
+2. Navigasikan ke halaman "Tambah Penduduk".
+3. Isi data penduduk seperti nama, alamat, dan informasi lainnya.
+4. Klik tombol "Simpan".
 
-Node.js dan NPM (opsional, untuk frontend assets).
+### Pencarian Data Penduduk
+1. Gunakan kolom pencarian di halaman utama.
+2. Masukkan kata kunci seperti nama atau alamat.
+3. Hasil pencarian akan ditampilkan secara instan.
 
-Langkah-langkah Instalasi
+### Membuat Laporan
+1. Pergi ke halaman "Laporan".
+2. Pilih format laporan (CSV atau PDF).
+3. Klik tombol "Export".
 
-Clone repositori ini:
-
-git clone https://github.com/nama_user/siap.git
-cd siap
-
-Install dependencies menggunakan Composer:
-
-composer install
-
-Salin file .env.example menjadi .env:
-
-cp .env.example .env
-
-Atur konfigurasi di file .env:
-
-APP_NAME=SIAP
-APP_ENV=local
-APP_KEY=
-APP_DEBUG=true
-APP_URL=http://localhost
-
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=nama_database
-DB_USERNAME=root
-DB_PASSWORD=password
-
-Generate application key:
-
-php artisan key:generate
-
-Jalankan migrasi database:
-
-php artisan migrate
-
-Jika diperlukan, jalankan seeder untuk mengisi data awal:
-
-php artisan db:seed
-
-Jalankan server lokal:
-
-php artisan serve
-
-Akses aplikasi di browser melalui http://127.0.0.1:8000.
-
-Struktur Direktori Utama
-
-app/: Logika aplikasi.
-
-config/: Konfigurasi aplikasi.
-
-database/: File migrasi dan seeder.
-
-resources/: File Blade templates dan asset frontend.
-
-routes/: File rute aplikasi.
-
-storage/: Penyimpanan file yang diunggah dan cache.
-
-Penggunaan
-
-Menambahkan Data Penduduk
-
-Login ke aplikasi.
-
-Navigasikan ke halaman "Tambah Penduduk".
-
-Isi data penduduk seperti nama, NIK, alamat, dan informasi lainnya.
-
-Klik tombol "Simpan".
-
-Pencarian Data Penduduk
-
-Gunakan kolom pencarian di halaman utama.
-
-Masukkan kata kunci seperti nama atau alamat.
-
-Hasil pencarian akan ditampilkan secara instan.
-
-Membuat Laporan
-
-Pergi ke halaman "Laporan".
-
-Pilih format laporan (CSV atau PDF).
-
-Klik tombol "Export".
-
-Kontribusi
+## Kontribusi
 
 Kontribusi sangat diterima! Silakan buat pull request atau ajukan issue di repositori ini untuk perbaikan atau fitur baru.
 
-Lisensi
+## Lisensi
 
-Aplikasi ini dilisensikan di bawah MIT License.
+---
 
 Terima kasih telah menggunakan SIAP - Sistem Informasi Alamat Penduduk!
-
 
